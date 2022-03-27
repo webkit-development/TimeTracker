@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        NSApp.keyWindow?.contentMinSize = NSSize(width: 800.0, height: 500.0)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
