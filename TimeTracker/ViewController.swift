@@ -10,8 +10,14 @@ import Cocoa
 class ViewController: NSViewController {
 
     
+    @IBOutlet var currently: NSTextField!
+    @IBOutlet var inButton: NSButton!
     @IBOutlet var goalLabel: NSTextField!
     @IBOutlet var goalTimePopUp: NSPopUpButton!
+    
+    var currentPeriod: Period?
+    var timer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,12 +39,41 @@ class ViewController: NSViewController {
         } else {
             goalLabel.stringValue = "Goal: \(goalTime) Hours"
         }
+        
+        if currentPeriod == nil {
+            inButton.title = "IN"
+            currently.isHidden = true
+        } else {
+            inButton.title = "OUT"
+            currently.isHidden = false
+            currently.stringValue = "Currently: \(currentPeriod!.currentlyString())"
+        }
     }
 
     @IBAction func goalTimeChangedPopUp(_ sender: Any) {
         updateView()
     }
     
+    @IBAction func inOutTapped(_ sender: Any) {
+        if currentPeriod == nil {
+            if let context = (NSApp.delegate as? AppDelegate)?.persistentContainer.viewContext {
+                currentPeriod = Period(context: context)
+                //currentPeriod?.inDate = Date()
+                currentPeriod?.inDate = Date(timeIntervalSinceNow: -14045)
+            }
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { timer in
+                self.updateView()
+            })
+        } else {
+            //clocking out
+            currentPeriod!.outDate = Date()
+            currentPeriod = nil
+            timer?.invalidate()
+            timer = nil
+        }
+        updateView()
+        (NSApp.delegate as? AppDelegate)?.saveAction(nil)
+    }
     func titles() -> [String] {
         var titles = [String]()
         for number in 1...40 {

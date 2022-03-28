@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		525DC80227F140BD00643CC2 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525DC80127F140BD00643CC2 /* Period.swift */; };
 		52F069A227F0CBCB002B6315 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F069A127F0CBCB002B6315 /* AppDelegate.swift */; };
 		52F069A427F0CBCB002B6315 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F069A327F0CBCB002B6315 /* ViewController.swift */; };
 		52F069A727F0CBCB002B6315 /* TimeTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52F069A527F0CBCB002B6315 /* TimeTracker.xcdatamodeld */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		525DC80127F140BD00643CC2 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
 		52F0699E27F0CBCB002B6315 /* TimeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F069A127F0CBCB002B6315 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52F069A327F0CBCB002B6315 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				52F069A127F0CBCB002B6315 /* AppDelegate.swift */,
 				52F069A327F0CBCB002B6315 /* ViewController.swift */,
+				525DC80127F140BD00643CC2 /* Period.swift */,
 				52F069A827F0CBCB002B6315 /* Assets.xcassets */,
 				52F069AA27F0CBCB002B6315 /* Main.storyboard */,
 				52F069AD27F0CBCB002B6315 /* TimeTracker.entitlements */,
@@ -136,6 +139,7 @@
 			files = (
 				52F069A427F0CBCB002B6315 /* ViewController.swift in Sources */,
 				52F069A227F0CBCB002B6315 /* AppDelegate.swift in Sources */,
+				525DC80227F140BD00643CC2 /* Period.swift in Sources */,
 				52F069A727F0CBCB002B6315 /* TimeTracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
